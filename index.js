@@ -21,8 +21,27 @@ const addmanager = () => {
             name: 'name',
             message: 'who is the manager',
             validate: nameInput => {
-                if (nameInput)
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('enter the managers name!');
+                    return false;
+                }
             }
-        }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message:'enter the managers ID.',
+            validate: nameInput => {
+                if (isNaN(nameInput)){
+                    console.log('please enter rhe managers id')
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        
     ])
 }
